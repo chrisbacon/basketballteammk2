@@ -1,10 +1,12 @@
+import java.util.*;
+
 class Team {
     private String name;
-    private Player[] onCourt;
+    private ArrayList<Player> onCourt;
 
     public Team(String name) {
         this.name = name;
-        this.onCourt = new Player[5];
+        this.onCourt = new ArrayList<Player>();
     }
 
     public String getName() {
@@ -14,7 +16,7 @@ class Team {
     public String getPlayersOnCourt() {
         String players = new String("The following players are on court: ");
 
-        for (Player player : this.onCourt) {
+        for (Player player : onCourt) {
             if (player != null) {
                 players = players + player.getName();
             }
@@ -34,20 +36,19 @@ class Team {
     }
 
     public boolean canEnter(Player player) {
-        return (this.onCourt[player.getPosition()] == null);
+        return ((onCourt.size() < 5) && (!onCourt.contains(player)));
     }
 
     public void subIn(Player player) {
-
         if (!canEnter(player)) return;
 
-        onCourt[player.getPosition()] = player;
+        onCourt.add(player);
     }
 
     public void subOut(Player player) {
-        if (onCourt[player.getPosition()] != player) return;
+        if (!onCourt.contains(player)) return;
 
-        onCourt[player.getPosition()] = null;
+        onCourt.remove(player);
     }
 
 }
