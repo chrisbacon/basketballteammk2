@@ -3,19 +3,19 @@ import org.junit.*;
 
 public class TeamTest{
   Team team;
-  Player player;
-  Player player2;
+  Guard player;
+  Forward player2;
 
   @Before 
   public void before() {
-    team = new Team("Milwaukee Bucks");
-    player = new Player("Giannis Antetokounmpo", 3);
-    player2 = new Player("Michael Beasley", 3);
+    team = new Team("Cleveland Cavaliers");
+    player = new Guard("Kyrie Irving");
+    player2 = new Forward("LeBron James");
   }
 
   @Test
   public void hasName(){
-    assertEquals("Milwaukee Bucks", team.getName()); 
+    assertEquals("Cleveland Cavaliers", team.getName()); 
   }
 
   @Test
@@ -49,5 +49,4 @@ public class TeamTest{
     team.subOut(player2);
     assertEquals(1, team.playerCount());
   }
-
 }
