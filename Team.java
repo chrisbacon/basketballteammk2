@@ -13,26 +13,8 @@ class Team {
         return this.name;
     }
 
-    public String getPlayersOnCourt() {
-        String players = new String("The following players are on court: ");
-
-        for (Player player : onCourt) {
-            if (player != null) {
-                players = players + player.getName();
-            }
-        }
-
-        return (players + ".");
-    }
-
     public int playerCount() {
-        int count = 0;
-        for (Player player : this.onCourt) {
-            if (player != null) {
-                count++;
-            }
-        }
-        return count;
+        return onCourt.size();
     }
 
     public boolean canEnter(Player player) {
