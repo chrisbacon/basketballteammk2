@@ -10,6 +10,6 @@ class Forward implements Scoreable {
     }
 
     public String score() {
-        return this.name.toUpperCase() + "!!! WITH NO REGARD FOR HUMAN LIFE!!!";
+        return this.name.toUpperCase() + " WITH THE MONSTER JAM!!!";
     }
 }

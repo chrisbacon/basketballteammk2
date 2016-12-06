@@ -10,6 +10,6 @@ class Guard implements Scoreable {
     }
 
     public String score() {
-        return this.name.toUpperCase() + "FROM DOWNTOWN!!!";
+        return this.name.toUpperCase() + " SCORES FROM DOWNTOWN!!!";
     }
 }
